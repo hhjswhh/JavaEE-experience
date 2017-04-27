@@ -43,7 +43,7 @@
 			<div class="row">
 				<div class="col-md-4"></div>
 				<div class="col-md-4">
-					<form class="form-horizontal" action="">
+					<form class="form-horizontal" action="servlet/RegisterServlet" method="POST">
 						<!--<div class="form-group">-->
 						<div class="row">
 							<label class="col-xs-4">用户名</label>
@@ -51,7 +51,7 @@
 
 						<div class="row">
 							<div class="col-xs-10">
-								<input type="text" class="form-control" id="" placeholder="用户名">
+								<input type="text" class="form-control" name="username" placeholder="用户名">
 							</div>
 						</div>
 						<!--</div>-->
@@ -63,7 +63,7 @@
 
 						<div class="row">
 							<div class="col-xs-10">
-								<input type="password" class="form-control" id="" placeholder="密码">
+								<input type="password" class="form-control" name="password1" placeholder="密码">
 							</div>
 						</div>
 						<div class="row">
@@ -72,7 +72,7 @@
 
 						<div class="row">
 							<div class="col-xs-10">
-								<input type="password" class="form-control" id="" placeholder="重复密码">
+								<input type="password" class="form-control" name="password2" placeholder="重复密码">
 							</div>
 						</div>
 						<!--</div>-->
@@ -80,7 +80,7 @@
 						</div>
 
 						<div class="col-xs-3"></div>
-							<input class="btn btn-lg btn-default" type="button" value="&nbsp &nbsp 注册 &nbsp &nbsp">
+							<input class="btn btn-lg btn-default" type="submit" value="&nbsp &nbsp 注册 &nbsp &nbsp">
 					</form>
 				</div>
 				<div class="col-md-4"></div>

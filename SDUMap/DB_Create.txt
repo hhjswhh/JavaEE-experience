@@ -1,0 +1,9 @@
+drop table if exists user
+create table user(
+id int(10) unsigned NOT NULL auto_increment,
+username varchar(50) NOT NULL,
+password varchar(10) NULL,
+email varchar(50) NULL,
+PRIMARY KEY(id)
+);
+Insert into user values(10,'admin','admin','fff@163.com');
