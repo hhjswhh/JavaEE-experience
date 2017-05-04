@@ -42,7 +42,14 @@ public class UserBean {
 		DBAccess db = new DBAccess();
 		
 		if(db.creatConn()){
+			System.out.println("插入操作");
 			String sql = "insert into user(username,password,email) values('"+username+"','"+password+"','"+email+"')";
+			if(db.update(sql)){
+				System.out.println("插入成功");
+			}
+			else{
+				System.out.println("插入失败");
+			}
 			db.closeAll();
 		}
 		

@@ -1,0 +1,7 @@
+
+public class DBAccess {
+	public String user;
+	public String passwd;
+	public String url = "jdbc:mysql://localhost:3306/project";
+	public String driver = "com.mysql.jdbc.Driver";
+}

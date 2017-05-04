@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+tomcat7Server.SDUMap.IEARProjectName=
+tomcat7Server.SDUMap.altContextRoot=/SDUMap
+tomcat7Server.SDUMap.contextRoot=/SDUMap
+tomcat7Server.SDUMap.deployIsOverProject=false
+tomcat7Server.SDUMap.deploymentPath=D\:\\JAVA\\apache-tomcat-7.0.76\\webapps\\SDUMap
+tomcat7Server.SDUMap.isDeployed=true
+tomcat7Server.SDUMap.isExploded=true
+tomcat7Server.SDUMap.isUptoDate=true
+tomcat7Server.SDUMap.noFileCopy=false
+tomcat7Server.SDUMap.shouldBackup=false
+tomcat7Server.SDUMap.shouldOverwrite=false
+tomcat7Server.SDUMap.type=WebDeployment

@@ -4,6 +4,7 @@ import java.io.PrintWriter;
 import javax.jms.Session;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -75,6 +76,12 @@ public class LoginServlet extends HttpServlet {
 			isValid = userBean.valid(username, password);
 			System.out.println(username + password);
 			if (isValid) {
+				//每次登陆都重发一次cookie，不去验证是否存在
+				Cookie name = new Cookie("username", username);
+				name.setPath(request.getContextPath());
+				name.setMaxAge(1000);
+				response.addCookie(name);
+				System.out.println("name: "+name.getName());
 				response.sendRedirect("../index.jsp");
 			} else {
 				response.sendRedirect("../Login.html");

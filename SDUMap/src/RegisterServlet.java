@@ -9,6 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 
 public class RegisterServlet extends HttpServlet {
 
+	String username = null;
+	String password1 = null;
+	String password2 = null;
+	String email = null;
+	
 	/**
 	 * Constructor of the object.
 	 */
@@ -37,19 +42,7 @@ public class RegisterServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
-		out.println("<HTML>");
-		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
-		out.println("  <BODY>");
-		out.print("    This is ");
-		out.print(this.getClass());
-		out.println(", using the GET method");
-		out.println("  </BODY>");
-		out.println("</HTML>");
-		out.flush();
-		out.close();
+		doPost(request, response);
 	}
 
 	/**
@@ -64,20 +57,40 @@ public class RegisterServlet extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		
 		response.setContentType("text/html");
+		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
-		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
-		out.println("<HTML>");
-		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
-		out.println("  <BODY>");
-		out.print("    This is ");
-		out.print(this.getClass());
-		out.println(", using the POST method");
-		out.println("  </BODY>");
-		out.println("</HTML>");
-		out.flush();
-		out.close();
+		
+		UserBean userbean = new UserBean();
+		username = request.getParameter("username");
+		password1 = request.getParameter("password1");
+		password2 = request.getParameter("password2");
+		email = request.getParameter("email");
+		
+		//判断用户名是否存在
+		if(userbean.isExist(username)){
+			out.print("用户名已存在");
+			response.setHeader("Refresh", "2;URL=/SDUMap/Register.jsp");
+		}else
+		//判断两次密码是否输入错误
+		if(!password1.equals(password2)){
+			out.print("密码不一致");
+			response.setHeader("Refresh", "2;URL=/SDUMap/Register.jsp");
+		}else{
+		//成功注册
+			System.out.println("尝试注册");
+			try{
+				userbean.add(username, password1, email);
+				out.print("注册成功");
+				System.out.println("注册成功");
+			
+			}catch(Exception e){
+				out.print("注册失败");
+				System.out.println("注册失败");
+			}
+			response.setHeader("Refresh", "3;URL=/SDUMap/index.jsp");
+		}
 	}
 
 	/**

@@ -59,6 +59,7 @@ public class DBAccess {
 	}
 	
 	public boolean creatConn(){
+		System.out.println("连接数据库");
 		boolean b = false;
 		try {
 			Class.forName(driver).newInstance();
@@ -70,6 +71,7 @@ public class DBAccess {
 	}
 	
 	public boolean update(String sql){
+		System.out.println("更新");
 		boolean b = false;
 		try {
 			stm = (Statement)conn.createStatement();
@@ -81,6 +83,7 @@ public class DBAccess {
 	}
 	
 	public void query(String sql){
+		System.out.println("查询");
 		try {
 			stm = (Statement)conn.createStatement();
 			rs = stm.executeQuery(sql);

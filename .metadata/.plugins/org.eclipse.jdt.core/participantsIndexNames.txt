@@ -1,0 +1,3 @@
+INDEX VERSION 1.126
+D:\myEclipse\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2245102632.index
+\SDUMap\src

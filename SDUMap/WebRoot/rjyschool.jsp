@@ -10,6 +10,7 @@
 	</head>
 
 	<body>
+		<%@ include file="Navbar.jsp" %>
 		<div class="container-fluid">
 			<div class="row">
 
@@ -17,7 +18,7 @@
 				<div class="col-xs-3"></div>
 				<div class="col-xs-8">
 
-					<iframe src="rjymap.html" width="1000" height="800" frameborder="0" scrolling="no"></iframe>
+					<iframe src="rjymap.html" width="1000" height="700" frameborder="0" scrolling="no"></iframe>
 
 				</div>
 			</div>

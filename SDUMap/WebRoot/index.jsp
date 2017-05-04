@@ -31,9 +31,9 @@
 
 	<!-- nav start -->
 	<div class="container">
-		<nav class="navbar navbar-default">
+		<!-- <nav class="navbar navbar-default">
 		<div class="container-fluid">
-			<!-- Collect the nav links, forms, and other content for toggling -->
+			Collect the nav links, forms, and other content for toggling
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
@@ -50,8 +50,8 @@
 			</div>
 		</div>
 		</nav>
-
-	</div>
+ -->
+ 		<jsp:include page="Navbar.jsp"></jsp:include>
 	<!-- nav end -->
 
 	<div class="container">
@@ -71,6 +71,7 @@
 		</div>
 	</div>
 
+	</div>
 </body>
 
 </html>
