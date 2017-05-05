@@ -10,6 +10,7 @@
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my navbar">
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
@@ -32,9 +33,9 @@
 							<li class="active">
 								<a href="index.jsp">首页<span class="sr-only">(current)</span></a>
 							</li>
-							<li class="navbar-right">
+							<!-- <li class="navbar-right">
 								<a href="#">导航</a>
-							</li>
+							</li> -->
 
 						</ul>
 						
@@ -54,7 +55,7 @@
 									System.out.println("Find cookie");
 						%>		
 							<div class="navbar-form navbar-right">
-								欢迎回来 &nbsp &nbsp <%=username.getValue() %> &nbsp &nbsp
+								欢迎回来 &nbsp &nbsp <%= java.net.URLDecoder.decode(username.getValue(),"UTF-8") %> &nbsp &nbsp
 								<a class="btn btn-primary" href="Logout.jsp">注销</a>
 							</div>
 							
@@ -64,7 +65,7 @@
 									System.out.println("Not find cookie");	
 						%>
 						<div class="navbar-form navbar-right">
-							<a class="btn btn-primary" href="Login.html">登录</a>
+							<a class="btn btn-primary" href="Login.jsp">登录</a>
 							&nbsp &nbsp
 							<a class="btn btn-default" href="Register.jsp">注册</a>
 						</div>

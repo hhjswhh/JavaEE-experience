@@ -1,0 +1,10 @@
+代码全部使用UTF-8，连接数据库在URL中也添加这个字段useUnicode=true&characterEncoding=UTF-8"
+即可以utf8形式连接数据库，完成字符配置,因为本身数据库是UTF-8格式，所以这样通过连接好一点
+
+Servlet不能进行跳转，逐步缩小范围，通过System.out.pringln方法定位到response.addCookie方法
+一直以为是编码格式问题。。。
+后来发现编码格式都没有问题，突然想到是不是cookie中不能包含中文。。。查了资料发现果然不能。。。
+所以要使用UIRLEncoder进行编码和解码，编码解码都要注明编码格式
+Cookie cookie=new Cookie("name",java.net.URLEncoder.encode(username,"UTF-8"));
+java.net.URLDecoder.decode(cookie.getValue(),"UTF-8");
+最后解码的时候没有注明格式，以至于在网页上的显示出现的是乱码。。。

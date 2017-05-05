@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -16,6 +16,7 @@
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my welcome page">
 
@@ -27,30 +28,10 @@
 
 </head>
 
-<body style="height:100%;background-color: gainsboro;">
+<body >
 
 	<!-- nav start -->
 	<div class="container">
-		<!-- <nav class="navbar navbar-default">
-		<div class="container-fluid">
-			Collect the nav links, forms, and other content for toggling
-			<div class="collapse navbar-collapse"
-				id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="index.jsp">首页<span
-							class="sr-only">(current)</span>
-					</a></li>
-					<li class="navbar-right"><a href="#">导航</a></li>
-
-				</ul>
-				<div class="navbar-form navbar-right">
-					<a class="btn btn-primary" href="Login.html">登录</a> <a
-						class="btn btn-default" href="Registe.html">注册</a>
-				</div>
-			</div>
-		</div>
-		</nav>
- -->
  		<jsp:include page="Navbar.jsp"></jsp:include>
 	<!-- nav end -->
 
@@ -59,6 +40,16 @@
 			<h1 class="">欢迎来到山东大学地图导航</h1>
 			<p>查看各类地图请点击按钮</p>
 			<p>
+			
+			<% Cookie cookies[] = request.getCookies();
+			   Cookie cookie = null;
+			   for(int i=0; i<cookies.length; i++){
+			   		if(cookies[i].getName().equals("username")){
+			   		cookie = cookies[i];
+			   		}
+			   }
+			   if(cookie != null){
+			%>			
 			<div class="list-group">
 				<a href="zxschool.jsp" class="list-group-item">中心校区</a> <a
 					href="qfsschool.jsp" class="list-group-item">千佛山校区</a> <a
@@ -67,10 +58,21 @@
 					href="rjyschool.jsp" class="list-group-item">软件园校区</a> <a
 					href="xlsschool.jsp" class="list-group-item">兴隆山校区</a>
 			</div>
+			<% }else{ %>
+			<div class="list-group">
+				<a href="Login.jsp" class="list-group-item">中心校区</a> <a
+					href="Login.jsp" class="list-group-item">千佛山校区</a> <a
+					href="Login.jsp" class="list-group-item">趵突泉校区</a> <a
+					href="Login.jsp" class="list-group-item">洪家楼校区</a> <a
+					href="Login.jsp" class="list-group-item">软件园校区</a> <a
+					href="Login.jsp" class="list-group-item">兴隆山校区</a>
+			</div>
+			<% } %>
 			</p>
 		</div>
 	</div>
 
+		<%@ include file="Bottom.jsp" %>
 	</div>
 </body>
 

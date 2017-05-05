@@ -37,9 +37,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  	}
   		}
   		
-  		response.setHeader("Refresh", "5;URL=index.jsp"); 
+  		response.setHeader("Refresh", "0;URL=index.jsp"); 
   	 %>
   	 
-  	 
+  	 <%@ include file="Bottom.jsp" %>
   </body>
 </html>

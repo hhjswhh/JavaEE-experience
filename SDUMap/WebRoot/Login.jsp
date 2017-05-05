@@ -1,7 +1,14 @@
-<!DOCTYPE html>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 
 	<head>
+    <base href="<%=basePath%>">
 		<meta charset="UTF-8">
 		<meta name="keywords" content="山东大学 地图">
 		<meta name="description" content="山东大学各校区地图查询">
@@ -12,26 +19,8 @@
 
 	<body style="height:100%;background-color: gainsboro;">
 		<div class="container">
-			<nav class="navbar navbar-default">
-				<div class="container-fluid">
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav">
-							<li class="active">
-								<a href="index.jsp">首页<span class="sr-only">(current)</span></a>
-							</li>
-							<li class="navbar-right">
-								<a href="#">导航</a>
-							</li>
-
-						</ul>
-						<div class="navbar-form navbar-right">
-							<a class="btn btn-primary" href="Login.jsp">登录</a>
-							<a class="btn btn-default" href="Registe.html">注册</a>
-						</div>
-					</div>
-				</div>
-			</nav>
+			<jsp:include page="Navbar.jsp"></jsp:include>
+			
 			<div class="row">
 				<div class="col-md-4"></div>
 				<div class="col-md-4">
@@ -83,7 +72,7 @@
 			</div>
 		</div>
 		</div>
-			<%@ include file="Bottom.jsp" %>
+			<jsp:include page="Bottom.jsp"></jsp:include>
 	</body>
 
 </html>

@@ -60,6 +60,7 @@ public class RegisterServlet extends HttpServlet {
 		
 		response.setContentType("text/html");
 		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 		
 		UserBean userbean = new UserBean();
@@ -89,7 +90,7 @@ public class RegisterServlet extends HttpServlet {
 				out.print("注册失败");
 				System.out.println("注册失败");
 			}
-			response.setHeader("Refresh", "3;URL=/SDUMap/index.jsp");
+			response.setHeader("Refresh", "2;URL=/SDUMap/Login.jsp");
 		}
 	}
 

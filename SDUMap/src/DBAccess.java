@@ -8,7 +8,7 @@ import com.mysql.jdbc.Statement;
 public class DBAccess {
 	private String user = "root";
 	private String pwd = "123456";
-	private String url = "jdbc:mysql://localhost:3306/J2EE_Experience";
+	private String url = "jdbc:mysql://localhost:3306/J2EE_Experience?useUnicode=true&characterEncoding=UTF-8";
 	private String driver = "com.mysql.jdbc.Driver";
 	
 	private Connection conn = null;
@@ -87,6 +87,7 @@ public class DBAccess {
 		try {
 			stm = (Statement)conn.createStatement();
 			rs = stm.executeQuery(sql);
+			 
 		} catch (Exception e) {
 		}
 	}

@@ -14,15 +14,16 @@
 		<div class="container-fluid">
 			<div class="row">
 
-				<h1 align="center">这是趵突泉校区的地图</h1>
+				<h2 align="center">这是趵突泉校区的地图</h2>
 				<div class="col-xs-3"></div>
 				<div class="col-xs-8">
 
-					<iframe src="btqmap.html" width="1000" height="700" frameborder="0" scrolling="no"></iframe>
+					<iframe src="btqmap.html" width="1000" height="680" frameborder="0" scrolling="no"></iframe>
 
 				</div>
 			</div>
 		</div>
+		<%@ include file="Bottom.jsp" %>
 	</body>
 
 </html>

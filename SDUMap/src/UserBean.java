@@ -52,7 +52,5 @@ public class UserBean {
 			}
 			db.closeAll();
 		}
-		
-		
 	}
 }
